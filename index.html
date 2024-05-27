@@ -17,19 +17,30 @@
             
             <h1>Weather App</h1>
             <br>
+            <!--Zip code, state, city input field-->
+            <form class='d-flex justify-content-lg-center justify-content-sm-center p-4' id="cityForm">
+                <label for="city"></label>
+                <img src="images\search-icon.png" class="search-icon" alt="search icon">
+                <input id="cityInputField" type="text" class="search-click" name="" placeholder="city or zip code" />
+                <button type="submit" id="submitBtn"></button>
+                <!--change button type to submit so that the event listener listens for submit so that we can prevent the default-->
+            </form>
+        <div class="weather-info row">  
+            <div id="weather" class="col">
+                <h1 id="location"></h1>
+                <h3 id="condition"></h3>
+                <h4 id="high-temp"></h4>
+                <h4 id="low-temp"></h4>
+            </div>
+            <div id="temp-icon" class="col-2 ">
+                <h1 id="temperature"></h1>
+            </div>
+        </div>  
+
         <div id="content" class="container d-flex justify-content-center">
             <div class="box">
-                <form class='d-flex justify-content-lg-end justify-content-sm-center p-4' id="cityForm">
-                    <label for="city"></label>
-                    <input id="city" type="text" class="search-click" name="" placeholder="city or zip code" />
-                    <button type="submit" id="submitBtn">></button>
-                    <!--change button type to submit so that the event listener listens for submit so that we can prevent the default-->
-                </form>
-                <div id="weather">
-                    <h1 id="temp"></h1>
-                    <h1 id="location"></h1>
-                    <h3 id="condition"></h3>
-                </div>
+            
+                
                 <div id="fiveDay"><div id="forecast" class="container d-flex justify-content-center justify-content-evenly"></div></div>
                 <div id="bonus-buttons">
 

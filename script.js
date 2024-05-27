@@ -1,4 +1,4 @@
-const cityInput = document.getElementById('city')
+const cityInput = document.getElementById('cityInputField')
 const form = document.getElementById('cityForm')
 const weatherDiv = document.getElementById('weather')
 
@@ -12,7 +12,7 @@ const getData = async function(city){
 // What is displayed
 const displayData = async function(city){
     let weatherData = await getData(city)
-    const temperature = document.getElementById('temp')
+    const temperature = document.getElementById('temperature')
     const location = document.getElementById('location')
     const condition = document.getElementById('condition')
     const forecast = document.getElementById('forecast')
@@ -79,3 +79,19 @@ form.addEventListener('submit', function(event){
     let city = cityInput.value
     displayData(city)
 })
+
+
+// Allows user to press enter to submit a form
+$(document).ready(function () {
+  var makeAllFormSubmitOnEnter = function () {
+    $(document).on('keypress', 'form input, form select', function (e) {
+      if (e.which && e.which == 13) {
+        $(this).closest('form').submit();
+      return false;
+      } else {
+        return true;
+      }
+    });
+  };
+  makeAllFormSubmitOnEnter();
+});
